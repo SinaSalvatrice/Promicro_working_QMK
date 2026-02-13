@@ -1,17 +1,6 @@
 #include QMK_KEYBOARD_H
 #include "rgblight.h"
 
-bool encoder_update_user(uint8_t index, bool clockwise) {
-    if (index == 0) {
-        if (clockwise) {
-            tap_code(KC_MS_WH_DOWN); // oder UP/DOWN tauschen, wenn Richtung falsch
-        } else {
-            tap_code(KC_MS_WH_UP);
-        }
-    }
-    return true;
-}
-
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [0] = LAYOUT(
         KC_NO, KC_F14, KC_F15, KC_BACKSLASH,
@@ -32,5 +21,4 @@ void keyboard_post_init_user(void) {
     wait_ms(150);
     rgblight_sethsv_noeeprom(85, 255, 80);
 }
-
 
