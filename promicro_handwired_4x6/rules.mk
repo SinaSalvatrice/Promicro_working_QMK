@@ -1,0 +1,6 @@
+
+CONSOLE_ENABLE = yes
+BOOTLOADER = caterina
+RGBLIGHT_ENABLE = yes
+RGBLIGHT_ENABLE = yes
+WS2812_DRIVER = bitbang
