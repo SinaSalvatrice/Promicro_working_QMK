@@ -56,12 +56,12 @@ static void render_lights(void) {
 /* Encoder update */
 bool encoder_update_user(uint8_t index, bool clockwise) {
     if (index == 0) {
-        if (clockwise) {/
+        if (clockwise) {
             dot_pos = (dot_pos + 3) % RGBLIGHT_LED_COUNT;
-            tap_code(MS_WHLD);
+            tap_code(KC_MS_WH_DOWN);
         } else {
             dot_pos = (dot_pos == 0) ? (RGBLIGHT_LED_COUNT - 1) : (dot_pos - 3);
-            tap_code(MS_WHLU);
+            tap_code(KC_MS_WH_UP);
         }
         render_lights();
     }
@@ -89,7 +89,6 @@ void keyboard_post_init_user(void) {
 
     rgblight_enable_noeeprom();
     rgblight_mode_noeeprom(RGBLIGHT_MODE_BREATHE);
-    DEFAULT
     /* Startup: colorful pulse */
     for (uint8_t i = 0; i < RGBLIGHT_LED_COUNT; i++) {
         uint8_t hue = (uint8_t)((uint16_t)i * 150 / (RGBLIGHT_LED_COUNT ? RGBLIGHT_LED_COUNT : 1));
@@ -116,7 +115,7 @@ void matrix_scan_user(void) {
             enc_btn_last = enc_btn_stable;
 
             if (!enc_btn_last) {
-                RGBLIGHT_ENABLE();
+                rgblight_enable_noeeprom();
             }
         }
     }
