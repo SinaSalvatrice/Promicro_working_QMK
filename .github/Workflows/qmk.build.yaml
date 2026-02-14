@@ -34,7 +34,7 @@ jobs:
           rm -rf qmk_firmware/keyboards/promicro_handwired_4x6
           cp -r promicro_handwired_4x6 qmk_firmware/keyboards/promicro_handwired_4x6
 
-      - name: Build (keymap: sina)
+      - name: Build (keymap:sina)
         working-directory: qmk_firmware
         run: |
           python3 -m qmk compile -kb promicro_handwired_4x6 -km sina
