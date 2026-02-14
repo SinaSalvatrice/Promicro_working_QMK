@@ -58,10 +58,10 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
     if (index == 0) {
         if (clockwise) {
             dot_pos = (dot_pos + 3) % RGBLIGHT_LED_COUNT;
-            tap_code(MS_WHLD);
+            tap_code(KC_MS_WH_DOWN);
         } else {
             dot_pos = (dot_pos == 0) ? (RGBLIGHT_LED_COUNT - 1) : (dot_pos - 3);
-            tap_code(MS_WHLU);
+            tap_code(KC_MS_WH_UP);
         }
         render_lights();
     }
