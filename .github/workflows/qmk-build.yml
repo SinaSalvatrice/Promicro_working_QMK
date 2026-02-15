@@ -8,7 +8,7 @@ on:
       - "promicro_handwired_4x6/**"
       - ".github/workflows/qmk-build.yml"
 
-jobs:
+jobs: 
   build:
     runs-on: ubuntu-latest
     steps:
